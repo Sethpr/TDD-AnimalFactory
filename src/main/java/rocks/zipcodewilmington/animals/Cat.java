@@ -13,4 +13,8 @@ public class Cat extends Mammal {
     public String speak() {
         return "meow!";
     }
+
+    public int getID() {
+        return this.getId();
+    }
 }

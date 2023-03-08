@@ -3,6 +3,7 @@ package rocks.zipcodewilmington;
 import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Dog;
 
 import java.util.Date;
 
@@ -10,11 +11,56 @@ import java.util.Date;
  * @author leon on 4/19/18.
  */
 public class CatTest {
-    // TODO - Create tests for `void setName(String name)`
-    // TODO - Create tests for `speak`
-    // TODO - Create tests for `setBirthDate(Date birthDate)`
+    @Test
+    public void setNameTest() {
+        // Given (a name exists and a cat exists)
+        Cat cat = new Cat(null, null, null);
+        String givenName = "Milo";
+
+        // When (a cat's name is set to the given name)
+        cat.setName(givenName);
+
+        // Then (we expect to get the given name from the cat)
+        String catName = cat.getName();
+        Assert.assertEquals(catName, givenName);
+    }
+
+
+    @Test
+    public void testSpeak() {
+        Cat cat = new Cat(null, null, null);
+        String expected = "meow!";
+
+        String actual = cat.speak();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+
+
+    @Test
+    public void setBirthDate() {
+        Cat cat = new Cat(null, null, null);
+        Date expected = new Date();
+
+        cat.setBirthDate(expected);
+
+        Date actual = cat.getBirthDate();
+        Assert.assertEquals(expected,actual);
+    }
+
     // TODO - Create tests for `void eat(Food food)`
-    // TODO - Create tests for `Integer getId()`
+
+    @Test
+    public void testGetId() {
+        int expected = 12;
+        Cat cat = new Cat(null, null, expected);
+
+        int actual = cat.getID();
+
+        Assert.assertEquals(expected,actual);
+    }
+
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
