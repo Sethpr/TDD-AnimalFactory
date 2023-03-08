@@ -16,7 +16,8 @@ import java.util.Date;
 public class DogHouseTest {
     @Test
     public void testAddDog(){
-        int expectedDogs = DogHouse.getNumberOfDogs()+1;
+        DogHouse.clear();
+        int expectedDogs = 1;
         Dog Dog = AnimalFactory.createDog("fido", new Date());
 
         DogHouse.add(Dog);
@@ -28,7 +29,8 @@ public class DogHouseTest {
 
     @Test
     public void testRemoveById(){
-        int expectedDogs = DogHouse.getNumberOfDogs();
+        DogHouse.clear();
+        int expectedDogs = 0;
         Dog Dog = AnimalFactory.createDog("spot", new Date());
         int id = Dog.getId();
         DogHouse.add(Dog);
@@ -41,7 +43,8 @@ public class DogHouseTest {
 
     @Test
     public void testRemoveByDog(){
-        int expectedDogs = DogHouse.getNumberOfDogs();
+        DogHouse.clear();
+        int expectedDogs = 0;
         Dog Dog = AnimalFactory.createDog("cat", new Date());
         DogHouse.add(Dog);
 

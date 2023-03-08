@@ -14,7 +14,8 @@ import java.util.Date;
 public class CatHouseTest {
     @Test
     public void testAddCat(){
-        int expectedCats = CatHouse.getNumberOfCats()+1;
+        CatHouse.clear();
+        int expectedCats = 1;
         Cat cat = AnimalFactory.createCat("fluffy", new Date());
 
         CatHouse.add(cat);
@@ -26,7 +27,8 @@ public class CatHouseTest {
 
     @Test
     public void testRemoveById(){
-        int expectedCats = CatHouse.getNumberOfCats();
+        CatHouse.clear();
+        int expectedCats = 0;
         Cat cat = AnimalFactory.createCat("mittens", new Date());
         int id = cat.getId();
         CatHouse.add(cat);
@@ -39,7 +41,8 @@ public class CatHouseTest {
 
     @Test
     public void testRemoveByCat(){
-        int expectedCats = CatHouse.getNumberOfCats();
+        CatHouse.clear();
+        int expectedCats = 0;
         Cat cat = AnimalFactory.createCat("garfield", new Date());
         CatHouse.add(cat);
 
@@ -51,6 +54,7 @@ public class CatHouseTest {
     // TODO - Create tests for `Cat getCatById(Integer id)`
     @Test
     public void testGetCatById(){
+        CatHouse.clear();
         Cat expectedCat = AnimalFactory.createCat("charmian meow", new Date());
         int id = expectedCat.getId();
         CatHouse.add(expectedCat);
@@ -59,9 +63,10 @@ public class CatHouseTest {
 
         Assert.assertTrue(expectedCat.equals(actualCat));
     }
-    // TODO - Create tests for `Integer getNumberOfCats()`
+
     @Test
     public void testGetNumberOfCats(){
+        CatHouse.clear();
         int expectedCats = 1;
         CatHouse.add(AnimalFactory.createCat("ra", new Date()));
 
